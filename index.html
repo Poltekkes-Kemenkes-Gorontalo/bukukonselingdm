@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Laboratorium</title> 
+    
+    <style>
+        /* Reset margin dan padding agar iframe menutupi seluruh layar */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Mencegah scrollbar ganda dari body */
+            background-color: #f3f4f6; /* Warna background abu-abu muda ala Tailwind */
+            font-family: 'Nunito', sans-serif;
+        }
+
+        /* Styling iframe agar full-screen dan tanpa border */
+        #app-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* (Opsional) Styling untuk loading screen jika diperlukan */
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #4b5563;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loading">Memuat Aplikasi...</div>
+
+    <iframe 
+        id="app-frame" 
+        src="https://script.google.com/macros/s/AKfycbwSnuvr0OpyLVGOVPMBRrOroB2g5KtgPXRKsTfEqqBCUeptatQXv82eU9fJEH-ZCKPW/exec" 
+        allowfullscreen="true" 
+        webkitallowfullscreen="true" 
+        mozallowfullscreen="true">
+    </iframe>
+
+    <script>
+        // Opsional: Sembunyikan tulisan loading setelah iframe dimuat
+        document.getElementById('app-frame').onload = function() {
+            document.querySelector('.loading').style.display = 'none';
+        };
+    </script>
+</body>
+</html>
+
